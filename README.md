@@ -55,9 +55,10 @@ Te detect similar text we are going to create **containment features**. To under
 
 
 If the two texts have no n-grams in common, the containment will be 0, but if _all_ their n-grams intersect then the containment will be 1. Intuitively, you can see how having longer n-gram's in common, might be an indication of cut-and-paste plagiarism. In this project, it will be up to you to decide on the appropriate `n` or several `n`'s to use in your final model.
+![alt text](https://github.com/alessandroNarcisi96/PlagiarismDetector/blob/master/Images/NGrams.PNG)
 
 So let's see the result by checking for 4-grams in common.
-![alt text](https://github.com/alessandroNarcisi96/PlagiarismDetector/blob/master/Images/NGrams.PNG)
+![alt text](https://github.com/alessandroNarcisi96/PlagiarismDetector/blob/master/Images/NGramsBoxPlot.PNG)
 As we can see the result is great!
 
 
