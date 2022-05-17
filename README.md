@@ -35,7 +35,7 @@ We need to use and then test the model in order to make sure that it is stable a
 
 ## Milestone 1 EDA and Feature Engineering
 
-We have basically 100 text(original text included) and the distribuition among the plagiarism is more ore less the same as shown in the picture below:
+We have basically 100 text(original text included) and the distribuition among the plagiarism is more or less the same as shown in the picture below:
 
 By using the filename let's add the text in order to count the length.
 The question is:Is length useful to predict whether a text is a plagiarism or not?
@@ -46,7 +46,7 @@ Te detect similar text we are going to create **containment features**. To under
 
 > Containment is defined as the **intersection** of the n-gram word count of the Wikipedia Source Text (S) with the n-gram word count of the Student  Answer Text (S) *divided* by the n-gram word count of the Student Answer Text.
 
-$$ \frac{\sum{count(\text{ngram}_{A}) \cap count(\text{ngram}_{S})}}{\sum{count(\text{ngram}_{A})}} $$
+>$$ \frac{\sum{count(\text{ngram}_{A}) \cap count(\text{ngram}_{S})}}{\sum{count(\text{ngram}_{A})}} $$
 
 If the two texts have no n-grams in common, the containment will be 0, but if _all_ their n-grams intersect then the containment will be 1. Intuitively, you can see how having longer n-gram's in common, might be an indication of cut-and-paste plagiarism. In this project, it will be up to you to decide on the appropriate `n` or several `n`'s to use in your final model.
 
