@@ -72,6 +72,57 @@ Containment a good way to find overlap in word usage between two documents; it m
 As the boxplots show the distribuition of the values change along the different types of plagiarism 
 ![alt text](https://github.com/alessandroNarcisi96/PlagiarismDetector/blob/master/Images/LCS.PNG)
 
+### LCS, dynamic programming
+
+If you read through the scenario above, you can see that this algorithm depends on looking at two texts and comparing them word by word. You can solve this problem in multiple ways. First, it may be useful to `.split()` each text into lists of comma separated words to compare. Then, you can iterate through each word in the texts and compare them, adding to your value for LCS as you go. 
+
+The method I recommend for implementing an efficient LCS algorithm is: using a matrix and dynamic programming. **Dynamic programming** is all about breaking a larger problem into a smaller set of subproblems, and building up a complete result without having to repeat any subproblems. 
+
+This approach assumes that you can split up a large LCS task into a combination of smaller LCS tasks. Let's look at a simple example that compares letters:
+
+* A = "ABCD"
+* S = "BD"
+
+We can see right away that the longest subsequence of _letters_ here is 2 (B and D are in sequence in both strings). And we can calculate this by looking at relationships between each letter in the two strings, A and S.
+
+Here, I have a matrix with the letters of A on top and the letters of S on the left side:
+
+<img src='notebook_ims/matrix_1.png' width=40% />
+
+This starts out as a matrix that has as many columns and rows as letters in the strings S and O **+1** additional row and column, filled with zeros on the top and left sides. So, in this case, instead of a 2x4 matrix it is a 3x5.
+
+Now, we can fill this matrix up by breaking it into smaller LCS problems. For example, let's first look at the shortest substrings: the starting letter of A and S. We'll first ask, what is the Longest Common Subsequence between these two letters "A" and "B"? 
+
+**Here, the answer is zero and we fill in the corresponding grid cell with that value.**
+
+<img src='notebook_ims/matrix_2.png' width=30% />
+
+Then, we ask the next question, what is the LCS between "AB" and "B"?
+
+**Here, we have a match, and can fill in the appropriate value 1**.
+
+<img src='notebook_ims/matrix_3_match.png' width=25% />
+
+If we continue, we get to a final matrix that looks as follows, with a **2** in the bottom right corner.
+
+<img src='notebook_ims/matrix_6_complete.png' width=25% />
+
+The final LCS will be that value **2** *normalized* by the number of n-grams in A. So, our normalized value is 2/4 = **0.5**.
+
+### The matrix rules
+
+One thing to notice here is that, you can efficiently fill up this matrix one cell at a time. Each grid cell only depends on the values in the grid cells that are directly on top and to the left of it, or on the diagonal/top-left. The rules are as follows:
+* Start with a matrix that has one extra row and column of zeros.
+* As you traverse your string:
+    * If there is a match, fill that grid cell with the value to the top-left of that cell *plus* one. So, in our case, when we found a matching B-B, we added +1 to the value in the top-left of the matching cell, 0.
+    * If there is not a match, take the *maximum* value from either directly to the left or the top cell, and carry that value over to the non-match cell.
+
+<img src='notebook_ims/matrix_rules.png' width=50% />
+
+After completely filling the matrix, **the bottom-right cell will hold the non-normalized LCS value**.
+
+This matrix treatment can be applied to a set of words instead of letters. Your function should apply this to the words in two texts and return the normalized LCS value.
+
 ### Common KeyWords
 Yake is a library that reads a text and find the keyword.In case of a plagiarism we can assume that there a lot of keywords in common.
 So basically I am going to compare the first 15 keywords that the text provided have in common.
