@@ -37,6 +37,8 @@ We need to use and then test the model in order to make sure that it is stable a
 
 We have basically 100 text(original text included) and the distribuition among the plagiarism is more or less the same as shown in the picture below:
 
+![alt text](https://github.com/alessandroNarcisi96/PlagiarismDetector/blob/master/Images/AllPlag.PNG)
+
 By using the filename let's add the text in order to count the length.
 The question is:Is length useful to predict whether a text is a plagiarism or not?
 
