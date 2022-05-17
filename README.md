@@ -42,12 +42,11 @@ The question is:Is length useful to predict whether a text is a plagiarism or no
 
 As the boxplots show below every type of text has a different distribuition so it will be a relevant feature.
 
-## N-Grams
+### N-Grams
 Te detect similar text we are going to create **containment features**. To understand containment, let's first revisit a definition of [n-grams](https://en.wikipedia.org/wiki/N-gram). An *n-gram* is a sequential word grouping. For example, in a line like "bayes rule gives us a way to combine prior knowledge with new information," a 1-gram is just one word, like "bayes." A 2-gram might be "bayes rule" and a 3-gram might be "combine prior knowledge."
 
 > Containment is defined as the **intersection** of the n-gram word count of the Wikipedia Source Text (S) with the n-gram word count of the Student  Answer Text (S) *divided* by the n-gram word count of the Student Answer Text.
 
-$$ \frac{\sum{count(\text{ngram}_{A}) \cap count(\text{ngram}_{S})}}{\sum{count(\text{ngram}_{A})}} $$
 
 If the two texts have no n-grams in common, the containment will be 0, but if _all_ their n-grams intersect then the containment will be 1. Intuitively, you can see how having longer n-gram's in common, might be an indication of cut-and-paste plagiarism. In this project, it will be up to you to decide on the appropriate `n` or several `n`'s to use in your final model.
 
@@ -55,7 +54,7 @@ So let's see the result by checking for 4-grams in common.
 As we can see the result is great!
 
 
-## Longest Common Subsequence
+### Longest Common Subsequence
 
 Containment a good way to find overlap in word usage between two documents; it may help identify cases of cut-and-paste as well as paraphrased levels of plagiarism. Since plagiarism is a fairly complex task with varying levels, it's often useful to include other measures of similarity.
 
@@ -63,9 +62,34 @@ Containment a good way to find overlap in word usage between two documents; it m
 
 As the boxplots show the distribuition of the values change along the different types of plagiarism 
 
-## Common KeyWords
+### Common KeyWords
 Yake is a library that reads a text and find the keyword.In case of a plagiarism we can assume that there a lot of keywords in common.
 So basically I am going to compare the first 15 keywords that the text provided have in common.
 
 As the boxplots show the distribuition of the values change along the different types of plagiarism
 
+## Milestone 2 Feature Selection
+As Applied Predictive Modeling at page 488 states 
+>"Feature selection is primarily focused on removing non-informative or redundant predictors from the model."
+
+We have already seen on EDA that all the features presented so far are important.We want know to avoid that they are too much correlated in order to make sure to don't overfit
+Since they are all continuos variable we can display the correlation matrix:
+
+Except for Ngrams and LCS the other ones are not high correlated.
+
+## Milestone 3 Model
+
+As the dataset is very small we are going to select model that don't tend to overfit such as:Logistic Regression and Naive Bayes.
+Furthermore a model like RandomForest which combines more weak learners could permorm very well.
+
+## Milestone 4 Performance and Testing
+
+It could be quite difficult making sure that we get a reliable performance as the dataset is very small.
+For this reason we are going to apply a specific type of Cross Validation which is particularly helpful in these cases:LOOCV
+
+In this tecnique if there are n observation only 1 is left for the testing set the remaining points are used for the training set.
+Then all the process is reiterated until all the point are used for the testing set.
+The final accuracy is the average of the results
+
+As the project show all the model in the end achieve the same accuracy:0.94
+Since the dataset is quite balanced between plagiarism and not plagiarism it is a good measure
