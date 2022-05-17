@@ -91,7 +91,7 @@ Except for Ngrams and LCS the other ones are not high correlated.
 ## Milestone 3 Model
 
 As the dataset is very small we are going to select model that don't tend to overfit such as:Logistic Regression and Naive Bayes.
-Furthermore a model like RandomForest which combines more weak learners could permorm very well.
+Furthermore a model like RandomForest which combines more weak learners could perform very well.
 
 ## Milestone 4 Performance and Testing
 
