@@ -63,9 +63,9 @@ Containment a good way to find overlap in word usage between two documents; it m
 
 As the boxplots show the distribuition of the values change along the different types of plagiarism 
 
-## Common KeyWord
-Yake is a library that reads a text and find the keyword.In case of a plagiarism we can assume that there a lot of keyword in common.
-So basically I am going to compare the first 15 keyword that the text provided have in common.
+## Common KeyWords
+Yake is a library that reads a text and find the keyword.In case of a plagiarism we can assume that there a lot of keywords in common.
+So basically I am going to compare the first 15 keywords that the text provided have in common.
 
-As the boxplots show the distribuition of the values change along the different types of plagiar
+As the boxplots show the distribuition of the values change along the different types of plagiarism
 
