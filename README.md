@@ -124,7 +124,7 @@ This matrix treatment can be applied to a set of words instead of letters. Your 
 
 ### Common KeyWords
 Yake is a library that reads a text and find the keyword.In case of a plagiarism we can assume that there a lot of keywords in common.
-So basically I am going to compare the first 15 keywords that the text provided have in common.
+So basically I am going to compare the first 15 keywords that the text provided has in common with the other text.
 
 As the boxplots show the distribuition of the values change along the different types of plagiarism
 ![alt text](https://github.com/alessandroNarcisi96/PlagiarismDetector/blob/master/Images/KeyWords.PNG)
