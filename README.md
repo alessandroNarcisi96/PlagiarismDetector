@@ -87,7 +87,7 @@ We have already seen on EDA that all the features presented so far are important
 Since they are all continuos variable we can display the correlation matrix:
 
 Except for Ngrams and LCS the other ones are not high correlated.
-
+![alt text](https://github.com/alessandroNarcisi96/PlagiarismDetector/blob/master/Images/Correlation.PNG)
 ## Milestone 3 Model
 
 As the dataset is very small we are going to select model that don't tend to overfit such as:Logistic Regression and Naive Bayes.
@@ -102,5 +102,5 @@ In this tecnique if there are n observation only 1 is left for the testing set t
 Then all the process is reiterated until all the point are used for the testing set.
 The final accuracy is the average of the results
 
-As the project show all the model in the end achieve the same accuracy:0.94
+As the project shows all the models in the end achieve the same accuracy:0.94
 Since the dataset is quite balanced between plagiarism and not plagiarism it is a good measure
