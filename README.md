@@ -101,11 +101,11 @@ Then, we ask the next question, what is the LCS between "AB" and "B"?
 
 **Here, we have a match, and can fill in the appropriate value 1**.
 
-![alt text](https://github.com/alessandroNarcisi96/PlagiarismDetector/blob/master/Images/lcs3.PNG)
+![alt text](https://github.com/alessandroNarcisi96/PlagiarismDetector/blob/master/Images/lcs3_1.PNG)
 
 If we continue, we get to a final matrix that looks as follows, with a **2** in the bottom right corner.
 
-![alt text](https://github.com/alessandroNarcisi96/PlagiarismDetector/blob/master/Images/lcs4.PNG)
+![alt text](https://github.com/alessandroNarcisi96/PlagiarismDetector/blob/master/Images/lcs4_1.PNG)
 
 The final LCS will be that value **2** *normalized* by the number of n-grams in A. So, our normalized value is 2/4 = **0.5**.
 
@@ -117,8 +117,7 @@ One thing to notice here is that, you can efficiently fill up this matrix one ce
     * If there is a match, fill that grid cell with the value to the top-left of that cell *plus* one. So, in our case, when we found a matching B-B, we added +1 to the value in the top-left of the matching cell, 0.
     * If there is not a match, take the *maximum* value from either directly to the left or the top cell, and carry that value over to the non-match cell.
 
-<img src='notebook_ims/matrix_rules.png' width=50% />
-
+![alt text](https://github.com/alessandroNarcisi96/PlagiarismDetector/blob/master/Images/lcs5.PNG)
 After completely filling the matrix, **the bottom-right cell will hold the non-normalized LCS value**.
 
 This matrix treatment can be applied to a set of words instead of letters. Your function should apply this to the words in two texts and return the normalized LCS value.
