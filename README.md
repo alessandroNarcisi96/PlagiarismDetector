@@ -57,6 +57,7 @@ Te detect similar text we are going to create **containment features**. To under
 If the two texts have no n-grams in common, the containment will be 0, but if _all_ their n-grams intersect then the containment will be 1. Intuitively, you can see how having longer n-gram's in common, might be an indication of cut-and-paste plagiarism. In this project, it will be up to you to decide on the appropriate `n` or several `n`'s to use in your final model.
 
 So let's see the result by checking for 4-grams in common.
+![alt text](https://github.com/alessandroNarcisi96/PlagiarismDetector/blob/master/Images/NGrams.PNG)
 As we can see the result is great!
 
 
@@ -67,12 +68,14 @@ Containment a good way to find overlap in word usage between two documents; it m
 > The longest common subsequence is the longest string of words (or letters) that are *the same* between the Wikipedia Source Text (S) and the Student Answer Text (A). This value is also normalized by dividing by the total number of words (or letters) in the  Student Answer Text. 
 
 As the boxplots show the distribuition of the values change along the different types of plagiarism 
+![alt text](https://github.com/alessandroNarcisi96/PlagiarismDetector/blob/master/Images/LCS.PNG)
 
 ### Common KeyWords
 Yake is a library that reads a text and find the keyword.In case of a plagiarism we can assume that there a lot of keywords in common.
 So basically I am going to compare the first 15 keywords that the text provided have in common.
 
 As the boxplots show the distribuition of the values change along the different types of plagiarism
+![alt text](https://github.com/alessandroNarcisi96/PlagiarismDetector/blob/master/Images/KeyWords.PNG)
 
 ## Milestone 2 Feature Selection
 As Applied Predictive Modeling at page 488 states 
