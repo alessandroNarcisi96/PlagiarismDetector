@@ -37,12 +37,16 @@ We need to use and then test the model in order to make sure that it is stable a
 
 We have basically 100 text(original text included) and the distribuition among the plagiarism is more or less the same as shown in the picture below:
 
+![alt text](https://github.com/alessandroNarcisi96/PlagiarismDetector/blob/master/Images/PlagNotPlag.PNG)
+
+The following image shows the distribuition for the types of plagiarism
 ![alt text](https://github.com/alessandroNarcisi96/PlagiarismDetector/blob/master/Images/AllPlag.PNG)
 
 By using the filename let's add the text in order to count the length.
 The question is:Is length useful to predict whether a text is a plagiarism or not?
 
 As the boxplots show below every type of text has a different distribuition so it will be a relevant feature.
+![alt text](https://github.com/alessandroNarcisi96/PlagiarismDetector/blob/master/Images/Length.PNG)
 
 ### N-Grams
 Te detect similar text we are going to create **containment features**. To understand containment, let's first revisit a definition of [n-grams](https://en.wikipedia.org/wiki/N-gram). An *n-gram* is a sequential word grouping. For example, in a line like "bayes rule gives us a way to combine prior knowledge with new information," a 1-gram is just one word, like "bayes." A 2-gram might be "bayes rule" and a 3-gram might be "combine prior knowledge."
