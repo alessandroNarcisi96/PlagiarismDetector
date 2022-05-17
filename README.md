@@ -87,7 +87,7 @@ We can see right away that the longest subsequence of _letters_ here is 2 (B and
 
 Here, I have a matrix with the letters of A on top and the letters of S on the left side:
 
-<img src='notebook_ims/matrix_1.png' width=40% />
+![alt text](https://github.com/alessandroNarcisi96/PlagiarismDetector/blob/master/Images/lcs1.PNG)
 
 This starts out as a matrix that has as many columns and rows as letters in the strings S and O **+1** additional row and column, filled with zeros on the top and left sides. So, in this case, instead of a 2x4 matrix it is a 3x5.
 
@@ -95,17 +95,17 @@ Now, we can fill this matrix up by breaking it into smaller LCS problems. For ex
 
 **Here, the answer is zero and we fill in the corresponding grid cell with that value.**
 
-<img src='notebook_ims/matrix_2.png' width=30% />
+![alt text](https://github.com/alessandroNarcisi96/PlagiarismDetector/blob/master/Images/lcs2.PNG)
 
 Then, we ask the next question, what is the LCS between "AB" and "B"?
 
 **Here, we have a match, and can fill in the appropriate value 1**.
 
-<img src='notebook_ims/matrix_3_match.png' width=25% />
+![alt text](https://github.com/alessandroNarcisi96/PlagiarismDetector/blob/master/Images/lcs3.PNG)
 
 If we continue, we get to a final matrix that looks as follows, with a **2** in the bottom right corner.
 
-<img src='notebook_ims/matrix_6_complete.png' width=25% />
+![alt text](https://github.com/alessandroNarcisi96/PlagiarismDetector/blob/master/Images/lcs4.PNG)
 
 The final LCS will be that value **2** *normalized* by the number of n-grams in A. So, our normalized value is 2/4 = **0.5**.
 
