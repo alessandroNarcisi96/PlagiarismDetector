@@ -58,7 +58,7 @@ If the two texts have no n-grams in common, the containment will be 0, but if _a
 ![alt text](https://github.com/alessandroNarcisi96/PlagiarismDetector/blob/master/Images/NGrams.PNG)
 
 So let's see the result by checking for 4-grams in common.
-![alt text](https://github.com/alessandroNarcisi96/PlagiarismDetector/blob/master/Images/NGramsBoxPlot.PNG)
+![alt text](https://github.com/alessandroNarcisi96/PlagiarismDetector/blob/master/Images/NgramsBoxPlot.PNG)
 As we can see the result is great!
 
 
